@@ -1,0 +1,15 @@
+GET http://localhost:5000/games
+
+###
+GET http://localhost:5000/games/1
+
+###
+POST http://localhost:5000/games
+Content-Type: application/json
+
+{
+    "name": "Minecraft",
+    "genre": "Family",
+    "price": 20.00,
+    "releaseDate": "2020-01-03"
+}
