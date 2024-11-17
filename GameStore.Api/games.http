@@ -7,7 +7,7 @@ GET http://localhost:5000/games/5
 POST http://localhost:5000/games
 Content-Type: application/json
 {
-    "name": "Minecraft",
+    "name": "",
     "genre": "Family",
     "price": 20.00,
     "releaseDate": "2020-01-03"
@@ -18,7 +18,7 @@ PUT http://localhost:5000/games/1
 Content-Type: application/json
 
 {
-    "name": "Minecraft UPDATED",
+    "name": "Minecraft UPDATED 1",
     "genre": "Family",
     "price": 20.00,
     "releaseDate": "2020-01-03"
