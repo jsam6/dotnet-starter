@@ -10,20 +10,21 @@ public static class GamesEndpoints {
         new (1, "street fighter", "fighting", 19.99M, new DateOnly(1992, 7, 15)),
     ];
 
-    public static WebApplication MapGamesEndpoints(this WebApplication app) {
+    public static RouteGroupBuilder MapGamesEndpoints(this WebApplication app) {
         
+        var group = app.MapGroup("games");
         // GET /games
-        app.MapGet("games", () => games);
+        group.MapGet("/", () => games);
 
         // GET /games
-        app.MapGet("games/{id}", (int id) => {
+        group.MapGet("/{id}", (int id) => {
             GameDto? game = games.Find(game => game.Id == id);
             return game is null ? Results.NotFound() : Results.Ok(game);
 
         }).WithName(GetGameEndpointName);
 
         // POST /games
-        app.MapPost("games", (CreateGameDto newGame) => {
+        group.MapPost("", (CreateGameDto newGame) => {
             GameDto game = new( games.Count + 1, newGame.Name, newGame.Genre, newGame.Price, newGame.ReleaseDate);
             games.Add(game);
 
@@ -31,7 +32,7 @@ public static class GamesEndpoints {
         });
 
         // PUT /games
-        app.MapPut("games/{id}", (int id, UpdateGameDto updateGameDto) => {
+        group.MapPut("/{id}", (int id, UpdateGameDto updateGameDto) => {
             var index = games.FindIndex(game => game.Id == id);
             if (index == -1) {
                 return Results.NotFound();
@@ -40,12 +41,12 @@ public static class GamesEndpoints {
             return Results.NoContent();
         });
 
-        app.MapDelete("games/{id}", (int id) => {
+        group.MapDelete("/{id}", (int id) => {
             games.RemoveAll(game => game.Id == id);
             return Results.NoContent();
         });
 
-        return app;
+        return group;
     }
 
 }
