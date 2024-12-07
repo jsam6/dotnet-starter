@@ -24,7 +24,7 @@ public static class GamesEndpoints {
         }).WithName(GetGameEndpointName);
 
         // POST /games
-        group.MapPost("", (CreateGameDto newGame) => {
+        group.MapPost("/", (CreateGameDto newGame) => {
             GameDto game = new( games.Count + 1, newGame.Name, newGame.Genre, newGame.Price, newGame.ReleaseDate);
             games.Add(game);
 

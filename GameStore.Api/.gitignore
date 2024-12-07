@@ -2,9 +2,9 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=dotnetcore
 
 ### DotnetCore ###
-# .NET Core build folders
-bin/
-obj/
+# .NET Core build foldes
+bin
+obj
 
 # Common node modules locations
 /node_modules
