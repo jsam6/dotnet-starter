@@ -8,8 +8,8 @@ POST http://localhost:5000/games
 Content-Type: application/json
 
 {
-    "name": "asdas",
-    "genre": 1,
+    "name": "qweqwe",
+    "genreId": 1,
     "price": 20.00,
     "releaseDate": "2020-01-03"
 }
@@ -20,7 +20,7 @@ Content-Type: application/json
 
 {
     "name": "Minecraft UPDATED 1",
-    "genre": 2,
+    "genreId": 1,
     "price": 20.00,
     "releaseDate": "2020-01-03"
 }
