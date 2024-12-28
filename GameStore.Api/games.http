@@ -9,7 +9,7 @@ Content-Type: application/json
 
 {
     "name": "asdas",
-    "genre": "Family",
+    "genre": 1,
     "price": 20.00,
     "releaseDate": "2020-01-03"
 }
@@ -20,7 +20,7 @@ Content-Type: application/json
 
 {
     "name": "Minecraft UPDATED 1",
-    "genre": "Family",
+    "genre": 2,
     "price": 20.00,
     "releaseDate": "2020-01-03"
 }
